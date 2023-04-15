@@ -1,0 +1,79 @@
+.main-container{
+    background-color: rgb(97, 104, 101);
+    height: 900px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px 40px;
+    border-radius: 20px;
+    margin: 30px 40px;
+}
+.main-container h1{
+    color: rgb(61, 228, 192);
+    font-size: 75px;
+    padding: 30px 0px 40px 0px;
+}
+
+.main-container .main-content-header{
+    border-bottom: 1px solid rgb(255, 72, 0);
+}
+
+.subtitle-container{
+    padding: 30px 0px;
+
+}
+
+.subtitle-container p{
+    color: white;
+    font-size: 40px;
+    
+}
+
+.subtitle-container p span{
+    padding: 0px 20px;
+    text-transform: uppercase;
+}
+
+.subtitle-container p .green-label{
+    background-color: blueviolet;
+    margin-left: 144px;
+}
+
+.subtitle-container p .pink-label{
+    background-color: rgb(118, 86, 148);
+    margin-left: 20px;
+}
+
+.descrip-container{
+    width: 400px;
+    color:aliceblue;
+    text-align: justify;
+    line-height: 20px;
+}
+
+.number-container .number-title{
+    color: gray;
+    font-size: 15px;
+}
+
+
+.number{
+    color: white;
+    font-size: 20px;
+}
+
+.action-container button{
+    background-color: transparent;
+    border: 1px solid gray;
+    padding: 20px 30px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.action-container button:hover{
+    border: 1px solid rgb(41, 37, 37);
+}
+
+.bg-changed{
+    background-color: #11e045
+    !important;
+}

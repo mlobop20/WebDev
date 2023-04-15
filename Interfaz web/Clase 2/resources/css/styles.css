@@ -1,0 +1,14 @@
+/*Selector de elemento*/
+h1{
+    color: blue;
+}
+
+/*Selector de ID*/
+#subtitulo{
+    font-family: Arial, Helvetica, sans-serif;
+    color: aqua;
+}
+
+.estilo{
+    color: brown;
+}

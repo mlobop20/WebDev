@@ -1,0 +1,97 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/*Header*/
+header{background-color: rgb(31, 30, 30);
+color: white;
+padding: 0px 30px 0px 25px;
+height: 300px;
+}
+
+.puntoVerde{
+    color: green;
+}
+
+.navDescripcion{
+    font-size: larger;
+}
+
+.navP{
+    font-size:x-small;
+}
+
+
+.navTitulos .navA{
+    float: right;
+    color: gray;
+}
+/*Fin del header*/
+
+/*Barra de navegación*/
+.navBar{
+    margin-top: 80px;
+
+    }
+.navBar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+.navBar .titulo{
+    font-size: 25px;
+    margin-right: 80px ;
+    font-weight: bolder;
+}
+.navBar .titulo2{
+    margin-right: 100px;
+}
+.navBar a{
+    margin: 0px 15px 0px 15px;
+}
+
+.iconoPersona{
+    width: 20px;
+    height: 20px;
+}
+/*Acá finaliza la barra de navegación*/
+
+/*Contenido*/
+.contenido{
+    font-size: 30px;
+    justify-content: center;
+}
+.menuContenido a{
+    color: black;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding-left: 20px;
+    margin: 0px 25px 0px 25px;
+    float: right;
+    font-size: 15px;
+}
+
+.contenidoColor{
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.contenidoColor h1{
+    color: rgba(247, 101, 4, 0.89);
+}
+
+#parrafo{
+    font-weight: bold;
+    font-size: 40px;
+    margin-left: 150px;
+}
+
+img{
+    width: 100%;
+    height: 600px;
+}
+/*Fin contenido*/

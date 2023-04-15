@@ -1,0 +1,18 @@
+h2{
+    color:red;
+}
+
+/*selector anidado*/
+.contenedor-imagen img{
+    width: 450px;
+    height: 300px;
+}
+
+
+.contenedor-imagen {
+    background-color: black;
+    border: 20px solid red;
+    padding: 20px 10px 30px 50px;
+    margin: 20px 10px 300px 50px;
+
+}

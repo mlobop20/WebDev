@@ -1,0 +1,76 @@
+.container{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    background-color: #169927;
+    height: 700px;
+    justify-content: space-evenly;
+    align-items: stretch;
+    overflow-y: auto;
+}
+
+.card{
+    background-color: rgba(233,233,233);
+    box-shadow: 1px 1px 40px -6px rgba(0,0,0,0.46);
+    -webkit-box-shadow:1px 1px 40px -6px rgba(0,0,0,0.46);
+    -moz-box-shadow:1px 1px 40px -6px rgba(0,0,0,0.46);
+    border-radius: 20px;
+    margin: 30px 20px;
+    width: 700px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.card .img-container{
+    padding: 5px 6px 5px 6px;
+}
+
+.card .img-container .image-top{
+    border-radius: 11px;
+    filter: brightness(70%) contrast(150%) saturate(0%) brightness(150%);
+}
+
+.card .title-container{
+    padding: 20px 0px;
+    margin-bottom: 20px;
+}
+
+.card .title-container .title{
+    padding: 0px;
+    margin: 0px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #ffff;
+    background: rgb(207,202,195);
+    background: linear-gradient(to right, rgb(207,202,195) 0%, rgb(230,243,255)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card .btn-container{
+    padding: 0px;
+    margin-bottom: 30px;
+}
+
+.card .btn-container .btn-link{
+    padding: 10px 15px 10px 15px;
+    background: rgb(211,211,211);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffff;
+    transition: all 1s ease;
+    margin-right: 10px;
+    /*Agregué el margin right para separar un poquito los botones*/
+}
+.card .btn-container .btn-link:hover{
+    background: #b4b4b4;
+}
+.card .description{
+    font-size: 16px;
+    color: rgb(147, 144, 144);
+}
+
+

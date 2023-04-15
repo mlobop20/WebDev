@@ -1,0 +1,116 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    margin-left: 40px;
+}
+.container{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.container .card{
+    border-radius: 10px 10px 10px 10px;
+    flex-grow: 1;
+    height: 480px;
+    width: 530px;
+    max-width: 550px;
+    -webkit-box-shadow: 1px 1px 7px 1px rgba(110,105,104,0.61);
+    -moz-box-shadow: 1px 1px 7px 1px rgba(110,105,104,0.61);
+    box-shadow: 1px 1px 7px 1px rgba(110,105,104,0.61);
+    margin: 10px 10px 10px 10px;
+}
+
+.container .card .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 330px;
+}
+.container .card .img-container .image{
+    height: 100%;
+    width: 100%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+
+.container .info-container hr{
+    width: 97%;
+    color: gray;
+}
+.container .info-container{
+    margin: 5px 5px 5px 15px;
+}
+.container .info-container{
+    line-height: 8px;
+
+}
+
+.container .card .info .price-lined{
+    text-decoration: line-through;
+    line-height: 15px;
+}
+
+
+
+
+.container .card .info{
+    font-size: 20px;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+
+.container .card .info .price{
+    color: #8005d3;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.container .card .info .btns .btnIcon{
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.container .card .info .btns{
+    display: flex;
+    align-items: center;
+}
+
+.container .card .info .btns .btnPreview:hover {
+    transition: all 0.3s ease;
+    color: #ffffff;
+    background-color: #8005d3;
+}    
+
+
+.container .card .info .btns .btnPreview {
+    padding: 10px 15px 10px 15px;
+    background: rgb(255, 255, 255);
+    font-size: 18px;
+    border-radius: 10px;
+    border-color: rgb(165, 144, 144);
+    color: #6305a1;
+    transition: all 1s ease;
+    margin-right: 10px;
+}
+
+@media only screen and (max-width: 437px) {
+    .info-container h2 {
+        font-size: 16px;}
+        .container .card{
+            height: 520px;
+        }
+    }

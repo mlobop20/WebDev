@@ -1,0 +1,28 @@
+.item{
+    background-color: #6d6868;
+    padding: 20px 30px;
+    color: rgb(253, 253, 253);
+    margin: 10px 5px;
+    float: left;    
+    width: 300px;
+}
+
+.clear{
+    clear: left;
+}
+
+@media only screen and (max-width:500px){
+    .item{
+        background-color: red;
+        float:none;
+        margin: 20px auto;
+    }   
+}
+
+@media only screen and (min-width:501px) and (max-width:1000px){
+    .item{
+        background-color: rgb(41, 20, 230);
+        float:none;
+        margin: 20px 30px;
+    }   
+}

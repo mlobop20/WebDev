@@ -1,0 +1,24 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #169927;
+    height: 700px;
+    justify-content: space-evenly;
+    align-items: stretch;
+    overflow-y: auto;
+}
+.item{
+    background-color: #6d6868;
+    padding: 20px 30px;
+    color: rgb(253, 253, 253);
+    margin: 10px 5px;
+    width: 300px;
+    max-width: 280px;
+    /*flex-grow: 1;*/
+}
+
+.item span{
+    color: rgb(248, 10, 10);
+    font-size: 20px;
+}
