@@ -13,7 +13,8 @@ window.onload = function () {
 
 
     function calculo() {
-        cantidadDeTela = Number(cantidadPersonas.value) * metrosPorPersona;
+        var cantidadDePersonas = Number(cantidadPersonas.value);
+        cantidadDeTela = cantidadDePersonas * metrosPorPersona;
         precioTotal = cantidadDeTela * precioMetroTela;
         resultado.innerHTML = `Se necesitarán: ${cantidadDeTela} metros de tela y el precio a pagar por dicha cantidad será de: ${precioTotal}`;
     }

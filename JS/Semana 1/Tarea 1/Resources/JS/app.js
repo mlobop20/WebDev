@@ -20,9 +20,9 @@ function calculo(){
   (precioHielo * Number(cantidadHielo.value)));
   var impuestoACobrar = precioBruto * (IMPUESTO / 100);
   precioNeto = precioBruto + impuestoACobrar;
-  resultadoNeto.innerHTML =`Precio Neto: ${precioBruto}`;
-  resultadoImpuestos.innerHTML =`Impuestos: ${impuestoACobrar}`;
-  resultadoH.innerHTML =`El precio final es: ${precioNeto}`;
+  resultadoNeto.innerHTML =`Precio Neto: ${precioBruto.toFixed(2)}`;
+  resultadoImpuestos.innerHTML =`Impuestos: ${impuestoACobrar.toFixed(2)}`;
+  resultadoH.innerHTML =`El precio final es: ${precioNeto.toFixed(2)}`;
 }
 
 
