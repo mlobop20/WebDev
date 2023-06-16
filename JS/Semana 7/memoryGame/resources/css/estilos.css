@@ -9,6 +9,10 @@
   --secondary-color: #b7e6da;
   --background-color: #ffffff;
   --navigation-container-height: 60px;
+  --cardView-hidden: rgb(223, 201, 201);
+  --cardView-showing: rgb(206, 74, 74);
+  --cardView-discovered: rgb(130, 128, 243);
+
 }
 
 
@@ -44,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 50%;
   height: 40px;
   border-radius: 10px;
   color: white;
@@ -52,11 +56,12 @@
   background-color: var(--primary-color);
   margin-top: 2px;
   cursor: pointer;
+  margin-left: 10px;
   user-select: none;
 
 }
 
-.back-button{
+.back-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +76,17 @@
   user-select: none;
 }
 
-.hidden{
+.hidden {
   display: none;
+}
+
+.game_input {
+  border:none;
+  border-width: 2px;
+  border-style: solid;;
+  border-color: lightgray;
+  border-radius: 10px;
+  width: 45%;
+  height: 35px;
+  margin-top: 10px
 }

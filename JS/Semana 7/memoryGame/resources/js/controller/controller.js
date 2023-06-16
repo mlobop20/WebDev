@@ -1,6 +1,6 @@
 export class Controller{
     constructor(gameManger){
-        this.gameManger = gameManger;
+        this.gameManager = gameManger;
         this.view = null;
         this.service = null;
     }

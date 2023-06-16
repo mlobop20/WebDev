@@ -3,17 +3,111 @@ import { PlayService } from "./playService.js";
 import { PlayView } from "./playView.js";
 import { Card } from "./card.js";
 
-export class PlayController extends Controller{
-    constructor(gameManager, parent){
+export class PlayController extends Controller {
+    constructor(gameManager, parent) {
         super(gameManager);
-        this.view = new PlayView(parent);
-        this.service = new PlayService(this.gameManger.difficulty, this.showCards.bind(this));
+        this.view = new PlayView(parent, this.onCardSelected.bind(this), this.reset.bind(this));
+        this.service = new PlayService(this.gameManager.difficulty, this.showCards.bind(this));
         this.cards = []; //model
+        this.cardView1 = null;
+        this.cardView2 = null;
+
+        this.cardsSelectedTimer = null;
+        this.gameTimer = null;
+        this.time = 0;
+        this.clicks = 0;
+
+        this.shouldGameFinish = false;
     }
 
-    showCards(cards){
-        this.view.showCards(cards);
-        console.log(cards);
+
+    onCardSelected(cardView) {
+
+        if (this.cardView1 === null) {
+            this.cardView1 = cardView;
+            this.cardView1.showShowing();
+            this.updateClicks();
+
+        } else if (this.cardView2 === null) {
+            this.cardView2 = cardView;
+            this.cardView2.showShowing();
+            this.cardsSelectedTimer = window.setTimeout(() => {
+                this.clearCardsSelected();
+            }, 1000);
+            this.updateClicks();
+
+
+
+        }
+        if (this.cardView1 !== null && this.cardView2 !== null) {
+            if (this.cardView1.card.id === this.cardView2.card.id) {
+                this.cardView1.card.isDiscovered = true;
+                this.cardView2.card.isDiscovered = true;
+                this.cardView1.showDiscovered();
+                this.cardView2.showDiscovered();
+                this.clearCardsSelected();
+                this.checkGameComplete();
+                if (this.isGameComplete) {
+                    this.stopTime();
+                    this.service.sendScore(this.clicks, this.time, this.gameManager.username);
+                }
+            }
+        }
+    }
+
+    clearCardsSelected() {
+        if (!this.cardView1.card.isDiscovered) {
+            this.cardView1.showHidden();
+            this.cardView2.showHidden();
+
+        }
+        this.cardView1 = null;
+        this.cardView2 = null;
+        window.clearTimeout(this.cardsSelectedTimer);
+        this.cardsSelectedTimer = null;
+    }
+    showCards(cards) {
+        this.cards = cards;
+        this.view.showCards(this.cards);
+        this.view.updateHudText(0, 0);
+        this.gameTimer = window.setInterval(() => {
+            this.updateTime();
+        }, 1000);
 
     }
+
+
+    updateClicks() {
+        this.clicks += 1;
+        this.view.updateHudText(this.clicks, this.time);
+
+    }
+
+    updateTime() {
+        this.time += 1;
+        this.view.updateHudText(this.clicks, this.time);
+    }
+
+    stopTime() {
+        window.clearTimeout(this.gameTimer);
+        this.gameTimer = null;
+    }
+
+    checkGameComplete() {
+        this.isGameComplete=true;
+        this.cards.forEach(card => {
+            if (card.isDiscovered === false) {
+                this.isGameComplete = false;
+            }
+        });
+    }
+
+    reset() {
+        this.stopTime();
+        this.clicks = 0;
+        this.time = 0;
+        this.view.updateHudText(this.clicks, this.time);
+        this.service.getData();
+    }
+
 }

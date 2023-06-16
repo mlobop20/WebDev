@@ -9,6 +9,45 @@
 }
 
 
-.play-controller-card {
-    font-size: 70px;
+
+
+.play-controller-hudContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+}
+
+
+.play-controller-cardsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    height: auto;
+    background-color: var(--background-color);
+}
+
+.play-controller-titleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 90%;
+}
+
+.play-controller-resetBtn {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 30%;
+height: 40px;
+border-radius: 10px;
+color: white;
+background-color: var(--primary-color);
+margin-left: 10px;
+cursor: pointer;
+user-select: none;
 }

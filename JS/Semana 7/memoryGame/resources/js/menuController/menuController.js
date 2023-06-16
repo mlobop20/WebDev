@@ -10,7 +10,7 @@ export class MenuController extends Controller{
     }
 
     changeTo(state){
-        this.gameManger.changeTo(state);
+        this.gameManager.changeTo(state);
     }
 
 }

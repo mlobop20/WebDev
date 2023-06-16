@@ -8,10 +8,12 @@ import { ScoresController } from "./scoresController/scoresController.js";
 
 export class GameManager {
     constructor() {
-        this.difficulty = 8;
+        this.username = null;
+        this.difficulty = 2;
         this.currentController = null;
         this.backButton = document.getElementById('backButton');
         this.contentContainer = document.getElementById('contentContainer');
+        this.loadUsername();
         this.changeTo(MENU_STATE);
 
         this.backButton.onclick = this.onBackButton.bind(this);
@@ -34,7 +36,12 @@ export class GameManager {
                 this.currentController = new LoginController(this, this.contentContainer);
                 break;
             case PLAY_STATE:
-                this.currentController = new PlayController(this, this.contentContainer);
+                if (this.isUsernameRegistered()) {
+                    this.currentController = new PlayController(this, this.contentContainer);
+                } else {
+                    alert('Enter username before playing!');
+                    this.changeTo(LOGIN_STATE);
+                }
 
                 break;
             case SCORES_STATE:
@@ -56,8 +63,26 @@ export class GameManager {
         }
     }
 
-    onBackButton(){
+    onBackButton() {
         this.changeTo(MENU_STATE);
         this.backButton.classList.add('hidden');
+    }
+
+    registerUsername(username) {
+        this.username = username;
+        this.changeTo(MENU_STATE);
+        localStorage.setItem('username', this.username);
+    }
+
+    loadUsername() {
+        if (localStorage.getItem('username')) {
+
+            this.username = localStorage.getItem('username');
+        }
+    }
+
+    isUsernameRegistered() {
+        return localStorage.getItem('username');
+
     }
 }
