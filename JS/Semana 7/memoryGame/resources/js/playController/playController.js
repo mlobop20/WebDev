@@ -22,13 +22,14 @@ export class PlayController extends Controller {
 
 
     onCardSelected(cardView) {
+        if (cardView.card.isDiscovered) return;
 
         if (this.cardView1 === null) {
             this.cardView1 = cardView;
             this.cardView1.showShowing();
             this.updateClicks();
 
-        } else if (this.cardView2 === null) {
+        } else if (this.cardView2 === null && this.cardView1 !== cardView) {
             this.cardView2 = cardView;
             this.cardView2.showShowing();
             this.cardsSelectedTimer = window.setTimeout(() => {
@@ -94,7 +95,7 @@ export class PlayController extends Controller {
     }
 
     checkGameComplete() {
-        this.isGameComplete=true;
+        this.isGameComplete = true;
         this.cards.forEach(card => {
             if (card.isDiscovered === false) {
                 this.isGameComplete = false;

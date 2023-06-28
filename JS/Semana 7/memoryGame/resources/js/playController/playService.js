@@ -6,7 +6,7 @@ export class PlayService {
 
     }
     getData() {
-        var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${this.difficulty}/type/food`  ;
+        var url = `https://us-central1-cenfoprojectsbackend.cloudfunctions.net/app/cards/${this.difficulty}/type/faces`  ;
         var request = new XMLHttpRequest();
         request.open('GET', url);
         request.onload = () => {

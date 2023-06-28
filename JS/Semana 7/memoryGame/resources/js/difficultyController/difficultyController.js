@@ -6,7 +6,11 @@ import { Difficulty } from "./difficulty.js";
 export class DifficultyController extends Controller{
     constructor(gameManager, parent){
         super(gameManager);
-        this.view = new DifficultyView(parent);
+        this.view = new DifficultyView(parent, this.difficultSelected.bind(this));
         this.service = new DifficultyService();
+    }
+    
+    difficultSelected(difficulty){
+        this.gameManager.setDifficuly(difficulty);
     }
 }

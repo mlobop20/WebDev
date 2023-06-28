@@ -9,11 +9,12 @@ import { ScoresController } from "./scoresController/scoresController.js";
 export class GameManager {
     constructor() {
         this.username = null;
-        this.difficulty = 2;
+        this.difficulty = 8;
         this.currentController = null;
         this.backButton = document.getElementById('backButton');
         this.contentContainer = document.getElementById('contentContainer');
         this.loadUsername();
+        this.loadUserDifficuly();
         this.changeTo(MENU_STATE);
 
         this.backButton.onclick = this.onBackButton.bind(this);
@@ -84,5 +85,18 @@ export class GameManager {
     isUsernameRegistered() {
         return localStorage.getItem('username');
 
+    }
+
+    setDifficuly(difficulty) {
+        this.difficulty = difficulty;
+        localStorage.setItem('difficuly', this.difficulty);
+
+    }
+
+    loadUserDifficuly() {
+        if (localStorage.getItem('difficuly')) {
+
+            this.difficulty = Number(localStorage.getItem('difficuly'));
+        }
     }
 }
