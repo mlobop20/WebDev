@@ -41,7 +41,6 @@ export default class Reloj extends React.Component {
     render() {
         return (
             <div  className="reloj1">
-                <h1>Reloj de {this.props.nombre}</h1>
                 <p>Tiempo Actual: {this.state.fecha.toLocaleTimeString()}</p>
             </div>
         )

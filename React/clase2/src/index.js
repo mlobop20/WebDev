@@ -1,11 +1,12 @@
-
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Reloj from './componentes/reloj/reloj';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap/dist/css/bootstrap.css';
 
 
 
@@ -42,7 +43,7 @@ import reportWebVitals from './reportWebVitals';
 // }
 
 // setInterval(Iteración, 1000);
- 
+
 
 // function Iteración(){
 //     const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -62,8 +63,13 @@ import reportWebVitals from './reportWebVitals';
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 
+// const enteros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const duplicados = enteros.map((entero)=>entero*2);
+// console.log(duplicados)
 
-    const root = ReactDOM.createRoot(document.getElementById('root'));
-    root.render(<App></App>);    
+// const listaElementos = enteros.map((ent)=><li>Elemento {ent}</li>);
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App></App>);
 
 reportWebVitals();

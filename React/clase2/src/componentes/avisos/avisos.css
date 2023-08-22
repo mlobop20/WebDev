@@ -1,0 +1,18 @@
+nav div {
+    display: inline;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+
+
+}
+
+.navMenuDiv {
+    background-color: rgb(177, 148, 148);
+    margin: 20px;
+    padding: 10px;
+    border-radius: 30px;
+}
