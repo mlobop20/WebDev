@@ -23,35 +23,102 @@ function main() {
 
     actualizarTabla();
 
+    // function guardarInfo() {
+    //     var nombre = nombreIn.value;
+    //     var apellido = apellidoIn.value;
+    //     var correo = correoIn.value;
+    //     var fondos = Number(fondosIn.value);
+    //     var mensualidad = Number(mensualidadIn.value);
+
+    //     if (nombre === "" || apellido === "" || correo === "" || fondosIn.value === "" || mensualidadIn.value === "") {
+    //         alert('Debe de rellenar todos los campos!');
+    //     } else if (!validarEmail(correo)) {
+    //         alert('Correo ya registrado!');
+    //     } else {
+    //         if (clienteSelected !== null) {
+    //             clienteSelected.nombre = nombre;
+    //             clienteSelected.apellido = apellido;
+    //             clienteSelected.email = correo;
+    //             clienteSelected.fondos = fondos;
+    //             clienteSelected.mensualidad = mensualidad;
+    //             clienteSelected = null;
+    //         } else {
+    //             const persona = new Persona(nombre, apellido, correo, fondos, mensualidad);
+    //             clientesArray.push(persona);
+    //             console.log(persona);
+    //         }
+
+    //         fetch('http://localhost:5500/agregarCliente', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 nombre,
+    //                 apellido,
+    //                 correo,
+    //                 fondos,
+    //                 mensualidad
+    //             }),
+    //         })
+    //             .then(response => {
+    //                 if (response.ok) {
+    //                     // Cliente agregado exitosamente
+    //                     alert('Cliente agregado a la base de datos');
+    //                     // Resto del código...
+    //                 } else {
+    //                     alert('Error al agregar el cliente a la base de datos');
+    //                 }
+    //             })
+    //             .catch(error => {
+    //                 alert('Error al conectarse con el servidor');
+    //             });
+
+    //         actualizarTabla();
+    //         limpiar()
+    //     }
+    // }
+
+
     function guardarInfo() {
         var nombre = nombreIn.value;
         var apellido = apellidoIn.value;
         var correo = correoIn.value;
         var fondos = Number(fondosIn.value);
         var mensualidad = Number(mensualidadIn.value);
-
+      
         if (nombre === "" || apellido === "" || correo === "" || fondosIn.value === "" || mensualidadIn.value === "") {
-            alert('Debe de rellenar todos los campos!');
-        } else if (!validarEmail(correo)) {
-            alert('Correo ya registrado!');
-        } else {
-            if (clienteSelected !== null) {
-                clienteSelected.nombre = nombre;
-                clienteSelected.apellido = apellido;
-                clienteSelected.email = correo;
-                clienteSelected.fondos = fondos;
-                clienteSelected.mensualidad = mensualidad;
-                clienteSelected = null;
-            } else {
-                const persona = new Persona(nombre, apellido, correo, fondos, mensualidad);
-                clientesArray.push(persona);
-                console.log(persona);
-            }
-
-            actualizarTabla();
-            limpiar()
+          alert('Debe rellenar todos los campos.');
+          return;
         }
-    }
+      
+        fetch('http://localhost:443/agregarCliente', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            nombre,
+            apellido,
+            correo,
+            fondos,
+            mensualidad
+          }),
+        })
+        .then(response => {
+          if (response.ok) {
+            // Cliente agregado exitosamente
+            alert('Cliente agregado a la base de datos');
+            // Resto del código si es necesario
+          } else {
+            alert('Error al agregar el cliente a la base de datos');
+          }
+        })
+        .catch(error => {
+          alert('Error al conectarse con el servidor');
+        });
+      }
+      
 
     function validarEmail(email) {
         if (clienteSelected !== null && clienteSelected.email === email) {
