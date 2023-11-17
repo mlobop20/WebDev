@@ -4,7 +4,7 @@ trigger:
     - master
 
 jobs:
-- job: Deploy to Azure App Service
+- job: DeploytoAzureAppService
   steps:
   - task: UseDotNet@2
     displayName: Use .NET Core 6.0
