@@ -1,10 +1,10 @@
 trigger:
-- branches:
+  branches:
     include:
     - master
 
 jobs:
-- job: Deploy
+- job: Deploy to Azure App Service
   steps:
   - task: UseDotNet@2
     displayName: Use .NET Core 6.0
@@ -13,8 +13,6 @@ jobs:
 
   - task: DotNetCoreCLI@2
     displayName: Build
-    args:
-    - 'dotnet build'
 
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifacts
@@ -22,8 +20,6 @@ jobs:
       artifactName: drop
       targetPath: $(Build.ArtifactStagingDirectory)
 
-- job: Deploy to App Service
-  steps:
   - task: AzureAppServiceDeploy@2
     displayName: Deploy to Azure App Service
     inputs:
@@ -31,4 +27,3 @@ jobs:
       appName: greciapymesproyecto.azurewebsites.net
       slotName: $(azureSlotName)
       artifactName: drop
-      targetPath: $(Build.ArtifactStagingDirectory)
