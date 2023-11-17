@@ -1,7 +1,8 @@
-trigger:
+triggers:
 - branches:
     include:
     - master
+
 
 jobs:
 - job: Deploy
@@ -13,8 +14,7 @@ jobs:
 
   - task: DotNetCoreCLI@2
     displayName: Build
-    args:
-    - 'dotnet build'
+    command: build
 
   - task: PublishBuildArtifacts@1
     displayName: Publish Artifacts
@@ -31,4 +31,4 @@ jobs:
       appName: greciapymesproyecto.azurewebsites.net
       slotName: $(azureSlotName)
       artifactName: drop
-      targetPath: $(Build.ArtifactStagingDirectory)
+
