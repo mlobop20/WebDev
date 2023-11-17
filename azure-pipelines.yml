@@ -28,7 +28,7 @@ jobs:
     displayName: Deploy to Azure App Service
     inputs:
       azureSubscription: $(azureSubscription)
-      appName: $(azureAppName)
+      appName: greciapymesproyecto.azurewebsites.net
       slotName: $(azureSlotName)
       artifactName: drop
       targetPath: $(Build.ArtifactStagingDirectory)
